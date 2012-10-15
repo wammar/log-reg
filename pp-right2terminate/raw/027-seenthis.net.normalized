@@ -1,0 +1,24 @@
+messages posted on seenthis remain the property of their respective authors .
+
+seenthis claims no rights to the tickets issued outside of these permissions to the proper functioning of the system by posting their messages on seenthis , the authors agree : 
+- that these messages are published ( shown to the public ) on the site seenthis . net
+- these messages are organized and enriched by the automation in the system seenthis ( translation , theming ...).
+
+the authors may at any time modify or delete their own posts . a tool to recover each author , in xml format , all of its messages . an author may request to destroy its own account ( contact us ).
+
+mention of the broadcasting license
+
+users may wish , from the configuration page of their " profile ", enter a broadcasting license under creative commons . the tool has a vocation to share information , promote all licenses that encourage this type of behavior .
+
+recover its own content
+
+any user may , already , recovering all of its content in an xml file format atom. this file is available at :
+
+
+( replace login passwd and by your login and personal password ).
+
+api and recovery tools
+
+seenthis also offers an api that will allow third party developers to provide tools to manipulate your content .
+
+among these tools , a first tool saves all your messages on seenthis as independent files ( your computer must have an apache / php ): seen - local .

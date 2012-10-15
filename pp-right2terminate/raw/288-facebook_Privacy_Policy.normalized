@@ -1,0 +1,280 @@
+facebook 
+facebook logo 
+email or phone 
+password 
+keep me logged in 
+forgot your password 
+sign up connect and share with the people in your life 
+data use policy 
+date of last revision june 8 2012 
+information we receive and how it is used 
+information we receive about you 
+public information 
+usernames and user ids 
+how we use the information we receive 
+deleting and deactivating your account 
+sharing and finding you on facebook 
+control each time you post 
+control over your timeline 
+finding you on facebook 
+access on phones and other devices 
+activity log 
+what your friends share about you 
+about pages 
+other websites and applications 
+about facebook platform 
+controlling what information you share with applications 
+controlling what is shared when the people you share with use applications 
+logging in to another site using facebook 
+about social plugins 
+about instant personalization 
+public search engines 
+how advertising and sponsored stories work 
+personalized ads 
+ads + social context 
+sponsored stories 
+facebook content 
+cookies pixels and other similar technologies 
+some other things you need to know 
+i information we receive and how it is used 
+information we receive about you 
+we receive a number of different types of information about you including 
+your information 
+your information is the information that s required when you sign up for the site as well as the information you choose to share 
+registration information when you sign up for facebook you are required to provide your name email address birthday and gender 
+information you choose to share your information also includes the information you choose to share on facebook such as when you post a status update upload a photo or comment on a friend s story 
+it also includes the information you choose to share when you take an action such as when you add a friend like a page or a website add a place to your story find friends using our contact importers or indicate you are in a relationship 
+your name profile pictures cover photos gender networks username and user id are treated just like information you choose to make public 
+your birthday allows us to do things like show you age appropriate content and advertisements 
+information others share about you 
+we receive information about you from your friends and others such as when they upload your contact information post a photo of you tag you in a photo or status update or at a location or add you to a group 
+when people use facebook they may store and share information about you and others that they have such as when they upload and manage their invites and contacts 
+other information we receive about you 
+we also receive other types of information about you 
+we receive data about you whenever you interact with facebook such as when you look at another person s timeline send or receive a message search for a friend or a page click on view or otherwise interact with things use a facebook mobile app or purchase facebook credits or make other purchases through facebook 
+when you post things like photos or videos on facebook we may receive additional related data or metadata such as the time date and place you took the photo or video 
+we receive data from the computer mobile phone or other device you use to access facebook including when multiple users log in from the same device this may include your ip address and other information about things like your internet service location the type including identifiers of browser you use or the pages you visit for example we may get your gps or other location information so we can tell you if any of your friends are nearby 
+we receive data whenever you visit a game application or website that uses facebook platform or visit a site with a facebook feature such as a social plugin sometimes through cookies this may include the date and time you visit the site the web address or url you re on technical information about the ip address browser and the operating system you use and if you are logged in to facebook your user id 
+sometimes we get data from our advertising partners customers and other third parties that helps us or them deliver ads understand online activity and generally make facebook better for example an advertiser may tell us information about you like how you responded to an ad on facebook or on another site in order to measure the effectiveness of and improve the quality of ads 
+we also put together data from the information we already have about you and your friends for example we may put together data about you to determine which friends we should show you in your news feed or suggest you tag in the photos you post we may put together your current city with gps and other location information we have about you to for example tell you and your friends about people or events nearby or offer deals to you that you might be interested in we may also put together data about you to serve you ads that might be more relevant to you 
+when we get your gps location we put it together with other location information we have about you like your current city but we only keep it until it is no longer useful to provide you services like keeping your last gps coordinates to send you relevant notifications 
+we only provide data to our advertising partners or customers after we have removed your name or any other personally identifying information from it or have combined it with other people s data in a way that it is no longer associated with you 
+public information 
+when we use the phrase public information which we sometimes refer to as everyone information we mean the information you choose to make public as well as information that is always publicly available 
+information you choose to make public 
+choosing to make your information public is exactly what it sounds like anyone including people off of facebook will be able to see it 
+choosing to make your information public also means that this information 
+can be associated with you i e your name profile pictures cover photos timeline user id username etc even off facebook 
+can show up when someone does a search on facebook or on a public search engine 
+will be accessible to the facebook integrated games applications and websites you and your friends use and 
+will be accessible to anyone who uses our apis such as our graph api 
+sometimes you will not be able to select an audience when you post something like when you write on a page s wall or comment on a news article that uses our comments plugin this is because some types of stories are always public stories as a general rule you should assume that if you do not see a sharing icon the information will be publicly available 
+when others share information about you they can also choose to make it public 
+information that is always publicly available 
+the types of information listed below are always publicly available and are treated just like information you decided to make public 
+name this helps your friends and family find you if you are uncomfortable sharing your real name you can always delete your account 
+profile pictures and cover photos these help your friends and family recognize you if you are uncomfortable making any of these photos public you can always delete it unless you delete them when you add a new profile picture or cover photo the previous photo will remain public in your profile picture or cover photo album 
+network this helps you see whom you will be sharing information with before you choose friends and networks as a custom audience if you are uncomfortable making your network public you can leave the network 
+gender this allows us to refer to you properly 
+username and user id these allow you to give out a custom link to your timeline or page receive email at your facebook email address and help make facebook platform possible 
+usernames and user ids 
+a username or facebook url is a custom link to your timeline that you can give out to people or post on external websites usernames appear in the url on your timeline we also use your user id to identify your facebook account 
+if someone has your username or user id they can use it to access information about you through the facebook com website for example if someone has your username they can type facebook com username into their browser and see your public information as well as anything else you ve let them see similarly someone with your username or user id can access information about you through our apis such as our graph api specifically they can access your public information along with your age range language and country 
+if you do not want your information to be accessible to platform applications you can turn off all platform applications from your privacy settings if you turn off platform you will no longer be able to use any games or other applications until you turn platform back on for more information about the information that apps receive when you visit them see other websites and applications 
+if you want to see information available about you through our graph api just type https graph facebook com [user id or username] metadata=1 into your browser 
+your facebook email address includes your public username like so username@facebook com you can control who can start a message thread with you using your “how you connect” settings if they include others on that message the others can reply too 
+how we use the information we receive 
+we use the information we receive about you in connection with the services and features we provide to you and other users like your friends our partners the advertisers that purchase ads on the site and the developers that build the games applications and websites you use for example we may use the information we receive about you 
+as part of our efforts to keep facebook products services and integrations safe and secure 
+to protect facebook s or others rights or property 
+to provide you with location features and services like telling you and your friends when something is going on nearby 
+to measure or understand the effectiveness of ads you and others see including to deliver relevant ads to you 
+to make suggestions to you and other users on facebook such as suggesting that your friend use our contact importer because you found friends using it suggesting that another user add you as a friend because the user imported the same email address as you did or suggesting that your friend tag you in a picture they have uploaded with you in it and 
+for internal operations including troubleshooting data analysis testing research and service improvement 
+granting us this permission not only allows us to provide facebook as it exists today but it also allows us to provide you with innovative features and services we develop in the future that use the information we receive about you in new ways 
+while you are allowing us to use the information we receive about you you always own all of your information your trust is important to us which is why we don t share information we receive about you with others unless we have 
+received your permission 
+given you notice such as by telling you about it in this policy or 
+removed your name or any other personally identifying information from it 
+of course for information others share about you they control how it is shared 
+we store data for as long as it is necessary to provide products and services to you and others including those described above typically information associated with your account will be kept until your account is deleted for certain categories of data we may also tell you about specific data retention practices 
+we are able to suggest that your friend tag you in a picture by scanning and comparing your friend s pictures to information we ve put together from the other photos you ve been tagged in this allows us to make these suggestions you can control whether we suggest that another user tag you in a photo using the “how tags work” settings learn more at https www facebook com help tag suggestions 
+deleting and deactivating your account 
+if you want to stop using your account you can either deactivate or delete it 
+deactivate 
+deactivating your account puts your account on hold other users will no longer see your timeline but we do not delete any of your information deactivating an account is the same as you telling us not to delete any information because you might want to reactivate your account at some point in the future you can deactivate your account at https www facebook com editaccount php 
+your friends will still see you listed in their list of friends while your account is deactivated 
+deletion 
+when you delete an account it is permanently deleted from facebook it typically takes about one month to delete an account but some information may remain in backup copies and logs for up to 90 days you should only delete your account if you are sure you never want to reactivate it you can delete your account at https www facebook com help contact php show_form=delete_account 
+learn more at https www facebook com help faq=356107851084108 
+certain information is needed to provide you with services so we only delete this information after you delete your account some of the things you do on facebook aren t stored in your account like posting to a group or sending someone a message where your friend may still have a message you sent even after you delete your account that information remains after you delete your account 
+ii sharing and finding you on facebook 
+control each time you post 
+whenever you post content like a status update photo or check in you can select a specific audience or even customize your audience to do this simply click on the sharing icon and choose who can see it 
+choose this icon if you want to make something public choosing to make something public is exactly what it sounds like it means that anyone including people off of facebook will be able to see or access it 
+choose this icon if you want to share with your facebook friends 
+choose this icon if you want to customize your audience you can also use this to hide your story from specific people 
+if you tag someone that person and their friends can see your story no matter what audience you selected the same is true when you approve a tag someone else adds to your story 
+always think before you post just like anything else you post on the web or send in an email information you share on facebook can be copied or re shared by anyone who can see it 
+although you choose with whom you share there may be ways for others to determine information about you for example if you hide your birthday so no one can see it on your timeline but friends post “happy birthday!” on your timeline people may determine your birthday 
+when you comment on or like someone else s story or write on their timeline that person gets to select the audience for example if a friend posts a public story and you comment on it your comment will be public often you can see the audience someone selected for their story before you post a comment however the person who posted the story may later change their audience 
+you can control who can see the facebook pages you ve liked by visiting your timeline clicking on the likes box on your timeline and then clicking edit 
+sometimes you will not see a sharing icon when you post something like when you write on a page s wall or comment on a news article that uses our comments plugin this is because some types of stories are always public stories as a general rule you should assume that if you do not see a sharing icon the information will be publicly available 
+control over your timeline 
+whenever you add things to your timeline you can select a specific audience or even customize your audience to do this simply click on the sharing icon and choose who can see it 
+choose this icon if you want to make something public choosing to make something public is exactly what it sounds like it means that anyone including people off of facebook will be able to see or access it 
+choose this icon if you want to share with your facebook friends 
+choose this icon if you want to customize your audience you can also use this to hide the item on your timeline from specific people 
+when you select an audience for your friend list you are only controlling who can see the entire list of your friends on your timeline we call this a timeline visibility control this is because your friend list is always available to the games applications and websites you use and your friendships may be visible elsewhere such as on your friends timelines or in searches for example if you select only me as the audience for your friend list but your friend sets her friend list to public anyone will be able to see your connection on your friend s timeline 
+similarly if you choose to hide your gender it only hides it on your timeline this is because we just like the applications you and your friends use need to use your gender to refer to you properly on the site 
+when someone tags you in a story such as a photo status update or check in you can choose whether you want that story to appear on your timeline you can either approve each story individually or approve all stories by your friends if you approve a story and later change your mind you can remove it from your timeline 
+people on facebook may be able to see mutual friends even if they cannot see your entire list of friends 
+some things like your name profile pictures and cover photos do not have sharing icons because they are always publicly available as a general rule you should assume that if you do not see a sharing icon the information will be publicly available 
+finding you on facebook 
+to make it easier for your friends to find you we allow anyone with your contact information such as email address or telephone number to find you through the facebook search bar at the top of most pages as well as other tools we provide such as contact importers even if you have not shared your contact information with them on facebook 
+you can choose who can look up your timeline using the email address or telephone number you added to your timeline through your privacy settings but remember if you choose friends only your current facebook friends will be able to find you this way 
+your “how you connect” settings do not control whether people can find you or a link to your timeline when they search for content they have permission to see like a photo or other story you ve been tagged in 
+access on phones and other devices 
+once you share information with your friends and others they may be able to sync it with or access it via their mobile phones and other devices for example if you share a photo on facebook someone viewing that photo could save it using facebook tools or by other methods offered by their device or browser similarly if you share your contact information with someone or invite someone to an event they may be able to use facebook or third party applications or devices to sync that information or if one of your friends has a facebook application on one of their devices your information such as the things you post or photos you share may be stored on or accessed by their device 
+you should only share information with people you trust because they will be able to save it or re share it with others including when they sync the information to a device 
+activity log 
+your activity log is a place where you can go to view most of your information on facebook including things you ve hidden from your timeline you can use this log to manage your content for example you can do things like delete stories change the audience of your stories or stop an application from publishing to your timeline on your behalf 
+when you hide something from your timeline you are not deleting it this means that the story may be visible elsewhere like in your friends news feed if you want to delete a story you posted choose the delete option 
+what your friends share about you 
+links and tags 
+anyone can add a link to a story links are references to something on the internet anything from a website to a page or timeline on facebook for example if you are writing a story you might include a link to a blog you are referencing or a link to the blogger s facebook timeline if someone clicks on a link to another person s timeline they ll only see the things that they are allowed to see 
+a tag is a special type of link to someone s timeline that suggests that the tagged person add your story to their timeline in cases where the tagged person isn t included in the audience of the story it will add them so they can see it anyone can tag you in anything once you are tagged you and your friends will be able to see it such as in news feed or in search 
+you can choose whether a story you ve been tagged in appears on your timeline you can either approve each story individually or approve all stories by your friends if you approve a story and later change your mind you can always remove it from your timeline 
+if you do not want someone to tag you we encourage you to reach out to them and give them that feedback if that does not work you can block them this will prevent them from tagging you going forward 
+if you are tagged in a private space such as a message or a group only the people who can see the private space can see the tag similarly if you are tagged in a comment only the people who can see the comment can see the tag 
+groups 
+once you are in a group anyone in that group can add you to a subgroup when someone adds you to a group you will be listed as “invited” until you visit the group you can always leave a group which will prevent others from adding you to it again 
+about pages 
+facebook pages are public pages companies use pages to share information about their products celebrities use pages to talk about their latest projects and communities use pages to discuss topics of interest everything from baseball to the opera 
+because pages are public information you share with a page is public information this means for example that if you post a comment on a page that comment may be used by the page owner off facebook and anyone can see it 
+when you like a page you create a connection to that page the connection is added to your timeline and your friends may see it in their news feeds you may be contacted by or receive updates from the page such as in your news feed and your messages you can remove the pages you ve liked through your timeline or on the page 
+some pages contain content that comes directly from the page owner page owners can do this through online plugins such as an iframe and it works just like the games and other applications you use through facebook because this content comes directly from the page owner that page may be able to collect information about you just like any website 
+page administrators may have access to insights data which will tell them generally about the people that visit their page as opposed to information about specific people they may also know when you ve made a connection to their page because you ve liked their page or posted a comment 
+iii other websites and applications 
+about facebook platform 
+facebook platform or simply platform refers to the way we help you share your information with the games applications and websites you and your friends use facebook platform also lets you bring your friends with you so you can connect with them off of facebook in these two ways facebook platform helps you make your experiences on the web more personalized and social 
+remember that these games applications and websites are created and maintained by other businesses and developers who are not part of facebook so you should always make sure to read their terms of service and privacy policies 
+controlling what information you share with applications 
+when you connect with a game application or website such as by going to a game logging in to a website using your facebook account or adding an app to your timeline we give the game application or website sometimes referred to as just applications or apps your basic info which includes your user id as well your friends user ids or your friend list and your public information 
+your friend list helps the application make your experience more social because it lets you find your friends on that application your user id helps the application personalize your experience because it can connect your account on that application with your facebook account and it can access your basic info which includes your public information and friend list this includes the information you choose to make public as well as information that is always publicly available if the application needs additional information such as your stories photos or likes it will have to ask you for specific permission 
+the “apps you use” setting lets you control the applications you use you can see the permissions you have given these applications the last time an application accessed your information and the audience on facebook for your timeline stories and activity the application posts on your behalf you can also remove applications you no longer want or turn off all platform applications when you turn all platform applications off your user id is no longer given to applications even when your friends use those applications but you will no longer be able to use any games applications or websites through facebook 
+when you first visit an app facebook lets the app know your language your country and whether you are under 18 between 18 20 or 21 and over age range lets apps provide you with age appropriate content if you install the app it can access store and update the information you ve shared apps you ve installed can update their records of your basic info age range language and country if you haven t used an app in a while it won t be able to continue to update the additional information you ve given them permission to access learn more at https www facebook com help how apps work 
+sometimes a game console mobile phone or other device might ask for permission to share specific information with the games and applications you use on that device if you say okay those applications will not be able to access any other information about you without asking specific permission from you or your friends 
+sites and apps that use instant personalization receive your user id and friend list when you visit them 
+you always can remove apps you ve installed by using your app settings at https www facebook com settings tab=applications but remember apps may still be able to access your information when the people you share with use them and if you ve removed an application and want them to delete the information you ve already shared with them you should contact the application and ask them to delete it visit the application s page on facebook or their own website to learn more about the app 
+controlling what is shared when the people you share with use applications 
+just like when you share information by email or elsewhere on the web information you share on facebook can be re shared this means that if you share something on facebook anyone who can see it can share it with others including the games applications and websites they use 
+your friends and the other people you share information with often want to share your information with applications to make their experiences on those applications more personalized and social for example one of your friends might want to use a music application that allows them to see what their friends are listening to to get the full benefit of that application your friend would want to give the application her friend list which includes your user id so the application knows which of her friends is also using it your friend might also want to share the music you “like” on facebook if you have made that information public then the application can access it just like anyone else but if you ve shared your likes with just your friends the application could ask your friend for permission to share them 
+you can control most of the information other people can share with applications they use from the “ads apps and websites” settings page but these controls do not let you limit access to your public information and friend list 
+if you want to completely block applications from getting your information when your friends and others use them you will need to turn off all platform applications this means that you will no longer be able to use any third party facebook integrated games applications or websites 
+if an application asks permission from someone else to access your information the application will be allowed to use that information only in connection with the person that gave the permission and no one else 
+logging in to another site using facebook 
+facebook platform lets you log into other applications and websites using your facebook account when you log in using facebook we give the site your user id just like when you connect with any other application but we do not share your email address or password with that website through this process 
+if you already have an account on that website the site may also be able to connect that account with your facebook account sometimes it does this using what is called an email hash which is similar to searching for someone on facebook using an email address only the email addresses in this case are hashed so no email addresses are actually shared between facebook and the website 
+how it works 
+the website sends over a hashed version of your email address and we match it with a database of email addresses that we have also hashed if there is a match then we tell the website the user id associated with the email address this way when you log into the website using facebook the website can link your facebook account to your account on that website 
+about social plugins 
+social plugins are buttons boxes and stories such as the like button that other websites can use to present facebook content to you and create more social and personal experiences for you while you view these buttons boxes and stories on other sites the content comes directly from facebook 
+sometimes plugins act just like applications you can spot one of these plugins because it will ask you for permission to access your information or to publish information back to facebook for example if you use a registration plugin on a website the plugin will ask your permission to share your basic info with the website to make it easier for you to register for the website similarly if you use an add to timeline plugin the plugin will ask your permission to publish stories about your activities on that website to facebook 
+if you make something public using a plugin such as posting a public comment on a newspaper s website then that website can access your comment along with your user id just like everyone else 
+if you post something using a social plugin and you do not see a sharing icon you should assume that story is public for example if you post a comment through a facebook comment plugin on a site your story is public and everyone including the website can see your story 
+websites that use social plugins can sometimes tell that you have engaged with the social plugin for example they may know that you clicked on a like button in a social plugin 
+we receive data when you visit a site with a social plugin we keep this data for a maximum of 90 days after that we remove your name or any other personally identifying information from the data or combine it with other people s data in a way that it is no longer associated with you learn more at https www facebook com help social plugins 
+about instant personalization 
+instant personalization is a way for facebook to help partners such as bing and rotten tomatoes on and off facebook create a more personalized and social experience for logged in users than a social plugin can offer when you visit a site or app using instant personalization it will know some information about you and your friends the moment you arrive this is because sites and apps using instant personalization can access your user id your friend list and your public information 
+the first time you visit a site or app using instant personalization you will see a notification letting you know that the site or app has partnered with facebook to provide a personalized experience 
+the notification will give you the ability to disable or turn off instant personalization for that site or app if you do that that site or app is required to delete all of the information about you it received from facebook as part of the instant personalization program in addition we will prevent that site from accessing your information in the future even when your friends use that site 
+if you decide that you do not want to experience instant personalization for all partner sites and apps you can disable instant personalization from the “ads apps and websites” settings page 
+if you turn off instant personalization partner third party sites and apps will not be able to access your public information even when your friends visit those sites 
+if you turn off an instant personalization site or app after you have been using it or visited it a few times or after you have given it specific permission to access your data it will not automatically delete your data received through facebook but the site is contractually required to delete your data if you ask it to 
+how it works 
+to join the instant personalization program a potential partner must enter into an agreement with us designed to protect your privacy for example this agreement requires that the partner delete your data if you turn off instant personalization when you first visit the site or app it also prevents the partner from accessing any information about you until you or your friends visit its site 
+instant personalization partners sometimes use an email hash process to see if any of their users are on facebook and get those users user ids this process is similar to searching for someone on facebook using an email address except in this case the email addresses are hashed so no actual email addresses are exchanged the partner is also contractually required not to use your user id for any purpose other than associating it with your account until you or your friends visit the site 
+when you visit a site or app using instant personalization we provide the site or app with your user id and your friend list as well as your age range locale and gender the site or app can then connect your account with that partner with your friends accounts to make the site or app instantly social the site can also access public information associated with any of the user ids it receives which it can use to make them instantly personalized for example if the site is a music site it can access your music interests to suggest songs you may like and access your friends music interests to let you know what they are listening to of course it can only access your or your friends music interests if they are public if the site or app wants any additional information it will have to get your specific permission 
+public search engines 
+your public search setting controls whether people who enter your name on a public search engine may see your public timeline including in sponsored results you can find your public search setting on the “ads apps and websites” settings page 
+this setting does not apply to search engines that access your information as an application using facebook platform 
+if you turn your public search setting off and then search for yourself on a public search engine you may still see a preview of your timeline this is because some search engines cache information for a period of time you can learn more about how to request a search engine to remove you from cached information at https www facebook com help faq=13323 
+iv how advertising and sponsored stories work 
+personalized ads 
+we do not share any of your information with advertisers unless of course you give us permission as described in this policy we may share your information when we have removed from it anything that personally identifies you or combined it with other information so that it no longer personally identifies you 
+we use the information we receive to deliver ads and to make them more relevant to you this includes all of the things you share and do on facebook such as the pages you like or key words from your stories and the things we infer from your use of facebook learn more at https www facebook com help page=226611954016283 
+when an advertiser creates an ad they are given the opportunity to choose their audience by location demographics likes keywords and any other information we receive or can tell about you and other users for example an advertiser can choose to target 18 to 35 year old women who live in the united states and like basketball an advertiser could also choose to target certain topics or keywords like “music” or even people who like a particular song or artist 
+try this tool yourself to see one of the ways advertisers target ads and what information they see at https www facebook com ads create 
+if the advertiser chooses to run the ad also known as placing the order we serve the ad to people who meet the criteria the advertiser selected but we do not tell the advertiser who any of those people are so for example if a person views or otherwise interacts with the ad the advertiser might infer that the person is an 18 to 35 year old woman who lives in the u s and likes basketball but we would not tell the advertiser who that person is 
+after the ad runs we provide advertisers with reports on how their ads performed for example we give advertisers reports telling them how many users saw or clicked on their ads but these reports are anonymous we do not tell advertisers who saw or clicked on their ads 
+advertisers sometimes place cookies on your computer in order to make their ads more effective learn more about cookies pixels and other system technologies 
+sometimes we allow advertisers to target a category of user like a moviegoer or a sci fi fan we do this by bundling characteristics that we believe are related to the category for example if a person likes the star trek page and mentions star wars when they check into a movie theater we may conclude that this person is likely to be a sci fi fan advertisers of sci fi movies for example could ask us to target “sci fi fans” and we would target that group which may include you or if you “like” pages that are car related and mention a particular car brand in a post we might put you in the “potential car buyer” category and let a car brand target to that group which would include you 
+ads + social context 
+facebook ads are sometimes paired with social actions your friends have taken for example an ad for a sushi restaurant may be paired with a news story that one of your friends likes that restaurant s facebook page 
+this is the same type of news story that could show up in your news feed only we place it next to a paid advertisement to make that ad more relevant and interesting 
+when you show up in one of these news stories we will only pair it with ads shown to your friends if you do not want to appear in stories paired with facebook ads you can opt out using your “ edit social ads ” setting 
+learn what happens when you click like on an advertisement or an advertiser s facebook page at https www facebook com help faq=19399 
+we may serve ads including those with social context or serve just social context on other sites these work just like the ads we serve on facebook the advertisers do not receive any of your information only people that could see the facebook action like on your timeline would see it paired in this way 
+your “show my social actions in facebook ads” setting only controls ads with social context it does not control sponsored stories ads or information about facebook s services and features or other facebook content 
+games applications and websites can serve ads directly to you or help us serve ads to you or others if they have information like your user id or email address 
+sponsored stories 
+many of the things you do on facebook like liking a page are posted to your timeline and shared in news feed but there s a lot to read in news feed that s why we allow people to sponsor your stories to make sure your friends see them for example if you rsvp to an event hosted by a local restaurant that restaurant may want to make sure your friends see it so they can come too 
+if they do sponsor a story that story will appear in the same place ads usually do or in your news feed under the heading sponsored or something similar only people that could originally see the story can see the sponsored story and no personal information about you or your friends is shared with the sponsor 
+your “show my social actions in facebook ads” setting only controls ads with social context it does not control sponsored stories ads or information about facebook s services and features or other facebook content 
+facebook content 
+we like to tell you about some of the features and tools your friends and others use on facebook to help you have a better experience for example if your friend uses our friend finder tool to find more friends on facebook we may tell you about it to encourage you to use it as well this of course means your friend may similarly see suggestions based on the things you do but we will try to only show it to friends that could benefit from your experience 
+your “show my social actions in facebook ads” setting only controls ads with social context it does not control sponsored stories ads or information about facebook s services and features or other facebook content 
+v cookies pixels and other similar technologies 
+cookies are small pieces of data that are stored on your computer mobile phone or other device pixels are small blocks of code on webpages that do things like allow another server to measure viewing of a webpage and often are used in connection with cookies 
+we use technologies like cookies pixels and local storage like on your browser or device which is similar to a cookie but holds more information to provide and understand a range of products and services learn more at https www facebook com help cookies 
+we use these technologies to do things like 
+make facebook easier or faster to use 
+enable features and store information about you including on your device or in your browser cache and your use of facebook 
+deliver understand and improve advertising 
+monitor and understand the use of our products and services and 
+to protect you others and facebook 
+for example we may use them to know you are logged in to facebook to help you use social plugins and share buttons or to know when you are interacting with our advertising or platform partners 
+we may ask advertisers or other partners to serve ads or services to computers mobile phones or other devices which may use a cookie pixel or other similar technology placed by facebook or the third party although we would not share any other information that identifies you with an advertiser 
+most companies on the web use cookies or other similar technological tools including our advertising and platform partners for example our platform partners advertisers or page administrators may use cookies or similar technologies when you access their apps ads pages or other content 
+cookies and things like local storage help make facebook work like allowing pages to load faster because certain content is stored on your browser or by helping us authenticate you to deliver personalized content 
+to learn more about how advertisers generally use cookies and the choices advertisers provide visit the network advertising initiative at http www networkadvertising org managing opt_out asp the digital advertising alliance at http www aboutads info the internet advertising bureau us at http www iab net or the internet advertising bureau eu at http youronlinechoices eu 
+you can remove or block cookies or other similar technologies or block or remove other data stored on your computer or device such as by using the various settings in your browser but it may affect your ability to use facebook or other websites and apps 
+vi some other things you need to know 
+safe harbor 
+facebook complies with the u s eu and u s swiss safe harbor frameworks as set forth by the department of commerce regarding the collection use and retention of data from the european union to view our certification visit the u s department of commerce s safe harbor website at https safeharbor export gov list aspx as part of our participation in the safe harbor program we agree to resolve disputes you have with us in connection with our policies and practices through truste if you would like to contact truste visit https feedback form truste com watchdog request 
+contact us with questions or disputes 
+if you have questions or complaints regarding our data use policy or practices please contact us by mail at 1601 willow road menlo park ca 94025 if you reside in the u s or canada or at facebook ireland ltd hanover reach 5 7 hanover quay dublin 2 ireland if you live outside the u s or canada anyone may also contact us through this help page https www facebook com help contact_us php id=173545232710000 
+responding to legal requests and preventing harm 
+we may access preserve and share your information in response to a legal request like a search warrant court order or subpoena if we have a good faith belief that the law requires us to do so this may include responding to legal requests from jurisdictions outside of the united states where we have a good faith belief that the response is required by law in that jurisdiction affects users in that jurisdiction and is consistent with internationally recognized standards we may also access preserve and share information when we have a good faith belief it is necessary to detect prevent and address fraud and other illegal activity to protect ourselves you and others including as part of investigations and to prevent death or imminent bodily harm information we receive about you including financial transaction data related to purchases made with facebook credits may be accessed processed and retained for an extended period of time when it is the subject of a legal request or obligation governmental investigation or investigations concerning possible violations of our terms or policies or otherwise to prevent harm 
+access requests 
+you can access and correct most of your personal data stored by facebook by logging into your account and viewing your timeline and activity log you can also download a copy of your personal data by visiting your “ account settings ” clicking on “download a copy of your facebook data” and then clicking on the link for your expanded archive learn more at https www facebook com help faq=226281544049399 
+notifications and other messages 
+we may send you notifications and other messages using the contact information we have for you like your email address you can control most of the notifications you receive including ones from pages you like and applications you use using your “notifications” settings 
+friend finder 
+we offer tools to help you upload your friends contact information so that you and others can find friends on facebook and invite friends who do not use facebook to join if you do not want us to store this information visit this help page at https www facebook com contact_importer remove_uploads php 
+if you give us your password we will delete it after you upload your friends contact information 
+invitations 
+when you invite a friend to join facebook we send a message on your behalf using your name and up to two reminders we may also include names and pictures of other people your friend might know on facebook the invitation will also give your friend the opportunity to opt out of receiving other invitations to join facebook 
+memorializing accounts 
+we may memorialize the account of a deceased person when we memorialize an account we keep the timeline on facebook but limit access and some features you can report a deceased person s timeline at https www facebook com help contact php show_form=deceased 
+we also may close an account if we receive a formal request that satisfies certain criteria 
+service providers 
+we give your information to the people and companies that help us provide understand and improve the services we offer for example we may use outside vendors to help host our website serve photos and videos process payments analyze data measure the effectiveness of ads or provide search results in some cases we provide the service jointly with another company such as the facebook marketplace in all of these cases our partners must agree to only use your information consistent with the agreement we enter into with them as well as this data use policy 
+security and bugs 
+we do our best to keep your information secure but we need your help for more detailed information about staying safe on facebook visit the facebook security page we try to keep facebook up bug free and safe but can t make guarantees about any part of our services or products 
+change of control 
+if the ownership of our business changes we may transfer your information to the new owner so they can continue to operate the service but they will still have to honor the commitments we have made in this data use policy 
+notice of changes 
+if we make changes to this data use policy we will notify you by publication here and on the facebook site governance page if the changes are material we will provide you additional prominent notice as appropriate under the circumstances you can make sure that you receive notice directly by liking the facebook site governance page 
+opportunity to comment and vote 
+unless we make a change for legal or administrative reasons or to correct an inaccurate statement we will give you seven 7 days to provide us with comments on the change if we receive more than 7000 comments concerning a particular change we will put the change up for a vote the vote will be binding on us if more than 30% of all active registered users as of the date of the notice vote 
+information for users outside of the united states and canada 
+company information the website under www facebook com and the services on these pages are being offered to users outside of the u s and canada by facebook ireland ltd hanover reach 5 7 hanover quay dublin 2 ireland the company facebook ireland ltd has been established and registered in ireland as a private limited company company number 462932 and is the data controller responsible for your personal information 
+directors cipora herman american theodore ullyot american 
+your california privacy rights 
+california law permits residents of california to request certain details about what personal information a company shares with third parties for the third parties direct marketing purposes facebook does not share your information with third parties for the third parties own and independent direct marketing purposes unless we receive your permission learn more about the information we receive and how it is used and other websites and applications if you have questions about our sharing practices or your rights under california law please write us at 1601 willow road menlo park ca 94025 or contact us through this help page https www facebook com help contact_us php id=173545232710000 
+facebook © 2012 · english us 
+mobile · find friends · badges · people · pages · about · create an ad · create a page · developers · careers · privacy · cookies · terms · help 
+
+

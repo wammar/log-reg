@@ -16,11 +16,15 @@ import socket
 from collections import defaultdict
 from boilerpipe.extract import Extractor
 
+class Const:
+  MAX_EXPONENT = 300.0
+  MAX_NUMBER = math.exp(300.0)
+
 class StoppingCriterion:
   # stop training when |loglikelihood(train data|new model) - loglikelihood(train data|prev model)| < threshold
-  TRAIN_LIKELIHOOD=1 
-  # stop training when loglikelihood(dev data|new model) - loglikelihood(dev data|prev model) < 0
-  DEV_LIKELIHOOD=2
+  TRAIN_LOGLIKELIHOOD=1 
+  # stop training when unregularized-log-likelihood(dev data|new model) - unregularized-log-likelihood(dev data|prev model) < 0
+  DEV_LOGLIKELIHOOD=2
   
 class OptimizationAlgorithm:
   STOCHASTIC_GRADIENT_DESCENT=1
@@ -32,15 +36,17 @@ class Regularizer:
 
 class LearningInfo:
   def __init__(self, 
-               stoppingCriterion=StoppingCriterion.TRAIN_LIKELIHOOD, 
+               stoppingCriterion=StoppingCriterion.TRAIN_LOGLIKELIHOOD, 
                stoppingCriterionThreshold = 0.00001, 
-               positiveDevSetSize = 1, 
+               positiveDevSetSize = 1,
                negativeDevSetSize = 1,
                optimizationAlgorithm = OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT,
                learningRate = 0.001,
                persistWeightsAtPrefix = '',
                regularizer = Regularizer.NONE,
-               regularizationCoefficient = 0):
+               regularizationCoefficient = 0,
+               minTrainingIterationsCount = 0,
+               maxTrainingIterationsCount = 1000):
     self.stoppingCriterion = stoppingCriterion
     self.stoppingCriterionThreshold = stoppingCriterionThreshold
     self.positiveDevSetSize = positiveDevSetSize
@@ -50,9 +56,21 @@ class LearningInfo:
     self.persistWeightsAtPrefix = persistWeightsAtPrefix
     self.regularizer = regularizer
     self.regularizationCoefficient = regularizationCoefficient
+    self.minTrainingIterationsCount = minTrainingIterationsCount
+    self.maxTrainingIterationsCount = maxTrainingIterationsCount
 
-  def REMOVE_ME(self):
-    print 'DONOTHING'
+  def Print(self):
+    print 'stoppingCriterion = {0}'.format(self.stoppingCriterion)
+    print 'stoppingCriterionThreshold = {0}'.format(self.stoppingCriterionThreshold)
+    print 'positiveDevSetSize = {0}'.format(self.positiveDevSetSize)
+    print 'negativeDevSetSize = {0}'.format(self.negativeDevSetSize)
+    print 'optimizationAlgorithm = {0}'.format(self.optimizationAlgorithm)
+    print 'learningRate = {0}'.format(self.learningRate)
+    print 'persistWeightsAtPrefix = {0}'.format(self.persistWeightsAtPrefix)
+    print 'regularizer = {0}'.format(self.regularizer)
+    print 'regularizationCoefficient = {0}'.format(self.regularizationCoefficient)
+    print 'minTrainingIterationsCount = {0}'.format(self.minTrainingIterationsCount)
+    print 'maxTrainingIterationsCount = {0}'.format(self.maxTrainingIterationsCount)
 
 # featuresDict is a defaultdict that maps non-zero feature ID to feature value in this example. label must be 0 or 1
 class Example:
@@ -67,11 +85,13 @@ class LogisticRegression:
   # resets all feature weights to zeros
   def InitFeatureWeights(self):
     self.weights = defaultdict(float)
+    self.featureImpacts = defaultdict(float)
 
   def ReadExamples(self, labelFeaturesFilename):
     # read the examples in labelFeaturesFilename in a list 
     examples = []
     if labelFeaturesFilename != None and len(labelFeaturesFilename) > 0:
+      print 'labelFeaturesFilename={0}'.format(labelFeaturesFilename)
       labelFeaturesFile = open(labelFeaturesFilename)
       firstLine = True
       for exampleLine in labelFeaturesFile:
@@ -103,45 +123,121 @@ class LogisticRegression:
 
   # fix exponent (before applying math.exp(exponent)) to avoid math range errors
   def FixExponent(self, exponent):
-    if exponent > 600:
-      exponent = 600
+    if exponent > Const.MAX_EXPONENT:
+      exponent = Const.MAX_EXPONENT
     return exponent
 
   # given an unlabeled example, compute probability that label=1, using the current feature weights
-  def ComputeProb1(self, unlabeledExample):
+  def ComputeProb1(self, unlabeledExample, trackFeatureImpact=False):
     exponent = 0
 #    print '===================\nunlabeledExample: \n{0}'.format(unlabeledExample)
     for featureId in unlabeledExample.featuresDict.keys():
-      exponent -= unlabeledExample.featuresDict[featureId] * self.weights[featureId]
-#      print 'computeprob1: {0}'.format(exponent)
+      temp = unlabeledExample.featuresDict[featureId] * self.weights[featureId]
+      if math.isnan(temp):
+        continue
+      if trackFeatureImpact:
+        self.featureImpacts[featureId] += math.fabs(temp)
+      exponent -= temp
+      # TODO:  better handling of this error
+      if math.isnan(exponent):
+        exponent = 0
     exponent = self.FixExponent(exponent)
     prob = 1.0 / (1.0 + math.exp(exponent))
-    prob = self.fixProb(prob)
+    prob = self.fixProb(prob, exponent)
     return prob
 
   # slightly adjust probability to avoid math domain errors
-  def fixProb(self, prob):
+  def fixProb(self, prob, exponent='-1'):
     if prob >= 1.0:
       prob -= 0.0001
     if prob <= 0.0:
       prob += 0.0001
-    assert(prob < 1.0 and prob > 0.0)
+
+    x = False
+    if prob <= 1.0 and prob >= 0.0:
+      x = True
+    else:
+      print 'problematic prob = {0}\noriginal exponent={1}'.format(prob, exponent)
+
+    assert(x)
     return prob
 
-  # minimize the loss function using stochastic gradient descent
-  # TODO: make sure L2 regularization works. and refactor the implementation such that other regularizers can be also used
-  def MinimizeLossWithSGD(self, trainExamples, learningInfo, persistWeightsAt=''):
+  # am i a huge positive or negative number?
+  def AmIBig(self, x):
+    return math.fabs(x) > Const.MAX_NUMBER
 
-    # only TRAIN_LIKELIHOOD stopping criteria is implemented
-    assert(learningInfo.stoppingCriterion == StoppingCriterion.TRAIN_LIKELIHOOD)
+  # determines whether the model has converged, based on the stopping criterion specified in learningInfo
+  def IsModelConverged(self, learningInfo, iterNumber, prevIterLoss=0, thisIterLoss=0, prevDevLoglikelihood=0, thisDevLoglikelihood=0, verbose=False):
+
+    # bounds on the number of iterations
+    if iterNumber < learningInfo.minTrainingIterationsCount:
+      return False
+    if iterNumber >  learningInfo.maxTrainingIterationsCount:
+      if verbose:
+        print 'forced to converge after reaching the maximum allowed number of iterations {0}'.format(learningInfo.maxTrainingIterationsCount)
+      return True
+
+    # stop when dev loglikelihood stabilizes
+    if learningInfo.stoppingCriterion == StoppingCriterion.DEV_LOGLIKELIHOOD:
+      
+      # check the difference
+      if thisDevLoglikelihood - prevDevLoglikelihood <= learningInfo.stoppingCriterionThreshold:
+        if verbose:
+          print 'cost function converged after {2} iterations: prevDevLogLikelihood = {0} | thisDevLogLikelihood = {1}'.format(
+            prevDevLoglikelihood, 
+            thisDevLoglikelihood,
+            iterNumber)
+        return True
+      else:
+        return False
+    # end of dev_loglikelihood stopping criteria
+
+    # stop when train loglikelihood stabiliizes
+    elif learningInfo.stoppingCriterion == StoppingCriterion.TRAIN_LOGLIKELIHOOD:
+
+      # if the loss doubles, something is wrong
+      if prevIterLoss > 0 and thisIterLoss / prevIterLoss > 2.0 and iterNumber > 10:
+        if verbose:
+          print 'forced to converge cuz the iteration loss doubled since the previous iteration, after {2} iterations: prevIterLoss = {0} | iterLoss = {1}'.format(prevIterLoss, thisIterLoss, iterNumber)
+        return True
+
+      # check the difference
+      if math.fabs(thisIterLoss - prevIterLoss) <= learningInfo.stoppingCriterionThreshold:
+        if verbose:
+          print 'cost function converged after {2} iterations: prevIterLoss = {0} | iterLoss = {1}'.format(prevIterLoss, thisIterLoss, iterNumber)
+        return True
+      else:
+        return False
+    # end of dev_loglikelihood stopping criteria
+
+  # mere wrapper
+  def MinimizeLoss(self, trainExamples, learningInfo, devExamples=[], persistWeightsAt='', resetWeights=True, verbose=False):
+    if learningInfo.optimizationAlgorithm == OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT:
+      self.MinimizeLossWithSGD(trainExamples=trainExamples, learningInfo=learningInfo, 
+                          devExamples=devExamples, persistWeightsAt=persistWeightsAt, resetWeights=resetWeights, verbose=verbose)
+    elif learningInfo.optimizationAlgorithm == OptimizationAlgorithm.GRADIENT_DESCENT:
+      self.MinimizeLossWithGD(trainExamples=trainExamples, learningInfo=learningInfo, 
+                          devExamples=devExamples, persistWeightsAt=persistWeightsAt, resetWeights=resetWeights, verbose=verbose)
+
+  # minimize the loss function using stochastic gradient descent
+  # TODO:  refactor the l2 implementation such that other regularizers can be also used
+  def MinimizeLossWithSGD(self, trainExamples, learningInfo, devExamples=[], persistWeightsAt='', resetWeights=True, verbose=False):
+
+    # it's a good idea to do this by default to avoid accidental influence of one experiment on the other
+    if resetWeights:
+      self.InitFeatureWeights()
+
+    # only TRAIN_LOGLIKELIHOOD stopping criteria is implemented
+    assert(learningInfo.stoppingCriterion == StoppingCriterion.TRAIN_LOGLIKELIHOOD or
+           learningInfo.stoppingCriterion == StoppingCriterion.DEV_LOGLIKELIHOOD and len(devExamples) > 0)
 
     # only L2 regularizer (and none) is implemented
     assert(learningInfo.regularizer == Regularizer.L2 or learningInfo.regularizer == Regularizer.NONE)
 
+    # keep updating weights until the stopping criterion is satisfied
     converged = False
     prevIterLoss = 0
-
-    # keep updating weights until the stopping criterion is satisfied
+    prevDevLoglikelihood = float('-inf')
     iterationsCounter = 0
     while not converged:
       iterationsCounter += 1
@@ -166,7 +262,10 @@ class LogisticRegression:
           l2RegularizationUpdateTerm = learningInfo.regularizationCoefficient / len(trainExamples) * self.weights[featureId]
 
           # the actual weight update happens here
-          self.weights[featureId] -= learningInfo.learningRate * ( example.featuresDict[featureId] * (prob1 - example.label) + l2RegularizationUpdateTerm )
+          multiplier = 1.0
+          if example.label == 1:
+            multiplier = 5.0
+          self.weights[featureId] -= multiplier * learningInfo.learningRate * ( example.featuresDict[featureId] * (prob1 - example.label) + l2RegularizationUpdateTerm )
 
         # end of features
 
@@ -176,18 +275,38 @@ class LogisticRegression:
       l2RegularizationLossTerm = 0
       for featureId in self.weights.keys():
         l2RegularizationLossTerm += learningInfo.regularizationCoefficient / len(trainExamples) / 2.0 * self.weights[featureId] * self.weights[featureId]
+      if verbose and learningInfo.regularizer != Regularizer.NONE:
+        print 'regularizationLossTerm = {0}'.format(l2RegularizationLossTerm)
 
       # add the L2 norm to the iteration loss
       iterLoss += l2RegularizationLossTerm
 
+      # compute the unregularized log likelihood of dev set
+      devLoglikelihood = 0
+      for example in devExamples:
+        prob1 = self.ComputeProb1(example)
+        if example.label == 1:
+          devLoglikelihood += math.log(prob1) / len(trainExamples)
+        else:
+          devLoglikelihood += math.log(1-prob1) / len(trainExamples)
+
+      # a concise message summarizing the progress made in this iteration
+      if learningInfo.stoppingCriterion == StoppingCriterion.DEV_LOGLIKELIHOOD and verbose:
+        print 'devLoglikelihood = {0}'.format(devLoglikelihood)
+      elif learningInfo.stoppingCriterion == StoppingCriterion.TRAIN_LOGLIKELIHOOD and verbose:
+        print 'iterLoss = {0}'.format(iterLoss)
+
       # determine convergence
-      if math.fabs(iterLoss - prevIterLoss) <= learningInfo.stoppingCriterionThreshold:
-        print 'cost function converged after {2} iterations: prevIterLoss = {0} | iterLoss = {1}'.format(prevIterLoss, iterLoss, iterationsCounter)
+      if self.IsModelConverged(iterNumber=iterationsCounter, thisIterLoss=iterLoss, 
+                               prevIterLoss=prevIterLoss, learningInfo=learningInfo, 
+                               prevDevLoglikelihood=prevDevLoglikelihood, thisDevLoglikelihood=devLoglikelihood, verbose=verbose):
         converged = True
+      
       # update prevIterLoss for next iterations
       prevIterLoss = iterLoss
+      prevDevLoglikelihood = devLoglikelihood
 
-    # stopping criterion reached!
+    # end of training iterations -- stopping criterion reached!
 
     # persist optimal weights
     if len(persistWeightsAt) > 0:
@@ -199,21 +318,25 @@ class LogisticRegression:
   # end of MinimizeLossWithSGD
 
   # minimize the loss function using batch gradient descent
-  # TODO: add L2 regularization. and refactor the implementation such that other regularizers can be also used
-  def MinimizeLossWithGD(self, trainExamples, learningInfo, persistWeightsAt=''):
+  def MinimizeLossWithGD(self, trainExamples, learningInfo, devExamples=[], persistWeightsAt='', resetWeights=True, verbose=False):
 
-    # only TRAIN_LIKELIHOOD stopping criteria is implemented
-    assert(learningInfo.stoppingCriterion == StoppingCriterion.TRAIN_LIKELIHOOD)
+    # it's a good idea to do this by default to avoid accidental influence of one experiment on the other
+    if resetWeights:
+      self.InitFeatureWeights()
+
+    # only TRAIN_LOGLIKELIHOOD stopping criteria is implemented
+    assert(learningInfo.stoppingCriterion == StoppingCriterion.TRAIN_LOGLIKELIHOOD or
+           learningInfo.stoppingCriterion == StoppingCriterion.DEV_LOGLIKELIHOOD and len(devExamples) > 0)
 
     # no regularizer is implemented none
-    assert(learningInfo.regularizer == Regularizer.NONE)
-
-    converged = False
-    prevIterLoss = 0
+    assert(learningInfo.regularizer == Regularizer.NONE or learningInfo.regularizer == Regularizer.L2)
 
     # keep updating weights until stopping criterion
     iterationsCounter = 0
     gradient = defaultdict(float)
+    converged = False
+    prevIterLoss = 0
+    prevDevLoglikelihood = float('-inf')
     while not converged:
 
       # new iteration, new gradient, new loss
@@ -232,6 +355,21 @@ class LogisticRegression:
           iterLoss -= math.log(prob1) / len(trainExamples)
         else:
           iterLoss -= math.log(1-prob1) / len(trainExamples)
+        
+        # loss is too big already! decision: consider this model converged.
+        if iterLoss == float('inf') or iterLoss == float('nan'):
+          exponent = 400
+        elif iterLoss == 0.0:
+          exponent = 1
+        else:
+          exponent = math.log(iterLoss)
+        if self.FixExponent(exponent) != exponent:
+          if verbose:
+            print '*&*(^%%$#*()*@$(*(*&&*!#$_)*$)('
+            print ' iteration loss sky rocketed!'
+            print '*&*(^%%$#*()*@$(*(*&&*!#$_)*$)('
+          converged = True
+          break
 
         # for each feature that fire in this example
         for featureId in example.featuresDict.keys():
@@ -245,23 +383,52 @@ class LogisticRegression:
 
       # update the weights with the gradient
       for featureId in gradient.keys():
-        self.weights[featureId] -= learningInfo.learningRate * (gradient[featureId] + learningInfo.regularizationCoefficient / len(trainExamples) * self.weights[featureId])
+        
+        # regularizer contribution to the update
+        regularizerUpdate = 0
+        if learningInfo.regularizer == Regularizer.L2:
+          regularizerUpdate = learningInfo.regularizationCoefficient / len(trainExamples) * self.weights[featureId]
 
-      # now compute the feature vector's L2 norm
-      l2RegularizationLossTerm = 0
+        # the actual weight update
+        self.weights[featureId] -= learningInfo.learningRate * (gradient[featureId] + regularizerUpdate)
+
+      # now compute the regularization term in the objective function
+      regularizationLossTerm = 0
       for featureId in self.weights.keys():
-        l2RegularizationLossTerm += learningInfo.regularizationCoefficient / len(trainExamples) / 2.0 * self.weights[featureId] * self.weights[featureId]
-      iterLoss += l2RegularizationLossTerm
+        if learningInfo.regularizer == Regularizer.L2:
+          regularizationLossTerm += learningInfo.regularizationCoefficient / len(trainExamples) / 2.0 * self.weights[featureId] * self.weights[featureId]
 
-      print 'iterLoss = {0}'.format(iterLoss)
+      # add the regularization term
+      if verbose and learningInfo.regularizer != Regularizer.NONE:
+        print 'regularizationLossTerm = {0}'.format(regularizationLossTerm)
+      iterLoss += regularizationLossTerm
 
-      # stopping criterion
-      if math.fabs(iterLoss - prevIterLoss) <= learningInfo.stoppingCriterionThreshold:
-        print 'cost function converged after {2} iterations: prevIterLoss = {0} | iterLoss = {1}'.format(prevIterLoss, iterLoss, iterationsCounter)
+      # compute the unregularized log likelihood of dev set
+      devLoglikelihood = 0
+      for example in devExamples:
+        prob1 = self.ComputeProb1(example)
+        if example.label == 1:
+          devLoglikelihood += math.log(prob1) / len(trainExamples)
+        else:
+          devLoglikelihood += math.log(1-prob1) / len(trainExamples)
+
+      # a concise message summarizing the progress made in this iteration
+      if learningInfo.stoppingCriterion == StoppingCriterion.DEV_LOGLIKELIHOOD and verbose:
+        print 'devLoglikelihood = {0}'.format(devLoglikelihood)
+      elif learningInfo.stoppingCriterion == StoppingCriterion.TRAIN_LOGLIKELIHOOD and verbose:
+        print 'iterLoss = {0}'.format(iterLoss)
+
+      # determine convergence
+      if self.IsModelConverged(iterNumber=iterationsCounter, thisIterLoss=iterLoss, 
+                               prevIterLoss=prevIterLoss, learningInfo=learningInfo, 
+                               prevDevLoglikelihood=prevDevLoglikelihood, thisDevLoglikelihood=devLoglikelihood, verbose=verbose):
         converged = True
+      
+      # update prevIterLoss for next iterations
       prevIterLoss = iterLoss
+      prevDevLoglikelihood = devLoglikelihood
 
-    # end of training iterations
+    # end of training iterations -- stopping criterion reached
 
     # persist optimal weights
     if len(persistWeightsAt) > 0:
@@ -272,14 +439,16 @@ class LogisticRegression:
 
   # end of MinimizeLossWithGD
         
-  # evaluate. returns (falsePositives, falseNegatives, truePositives, trueNegatives)
-  def Evaluate(self, testExamples, classThreshold = 0.5):
+  # evaluate. returns (falsePositives, falseNegatives, truePositives, trueNegatives, prob1)
+  def Evaluate(self, testExamples, classThreshold = 0.5, verbose=True, trackFeatureImpact=False):
     falsePositives = 0
     falseNegatives = 0
     truePositives = 0
     trueNegatives = 0
+    exampleProb1List = []
     for example in testExamples:
-      prob1 = self.ComputeProb1(example)
+      prob1 = self.ComputeProb1(example, trackFeatureImpact)
+      exampleProb1List.append((example, prob1))
       print 'prob1= {0} | label = {1}'.format(prob1, example.label)
       if prob1 >= classThreshold and example.label == 1:
         truePositives += 1
@@ -290,10 +459,14 @@ class LogisticRegression:
       else:
         falseNegatives += 1
 
-    return (falsePositives, falseNegatives, truePositives, trueNegatives, prob1)
+    return (falsePositives, falseNegatives, truePositives, trueNegatives, exampleProb1List)
 
   # n-fold cross validation. returns (precision, recall, accuracy, f1)
-  def NFoldCrossValidation(self, examples, n, learningInfo, classThreshold = 0.5):
+  def NFoldCrossValidation(self, examples, n, learningInfo, classThreshold = 0.5, verbose=False, trackFeatureImpact=False):
+
+    if verbose:
+      learningInfo.Print()
+
     totalFalsePositives, totalFalseNegatives, totalTruePositives, totalTrueNegatives = 0, 0, 0, 0
     precision, recall, accuracy, f1 = 0, 0, 0, 0
 
@@ -307,17 +480,28 @@ class LogisticRegression:
     for i in range(0, len(examples)):
       foldIds.append(i/examplesPerFold)
 
+    # example-prob pairs
+    exampleProb1Pairs = []
+
     # iterate over the n folds
     for testFoldId in range(0, n):
 
-      # identify train vs test examples
-      trainExamples, testExamples = [], []
+      # identify train, dev and test examples for this fold
+      trainExamples, testExamples, positiveDevExamples, negativeDevExamples = [], [], [], []
       for exampleId in range(0, len(examples)):
         if foldIds[exampleId] == testFoldId:
           testExamples.append(examples[exampleId])
+        elif len(positiveDevExamples) < learningInfo.positiveDevSetSize and examples[exampleId].label == 1:
+          positiveDevExamples.append(examples[exampleId])
+        elif len(negativeDevExamples) < learningInfo.negativeDevSetSize and examples[exampleId].label == 0:
+          negativeDevExamples.append(examples[exampleId])
         else:
           trainExamples.append(examples[exampleId])
+      # end of examples
 
+      # merge positive and negative dev examples
+      devExamples = negativeDevExamples + positiveDevExamples
+      
       # optimize feature weights
       self.InitFeatureWeights()
       if len(learningInfo.persistWeightsAtPrefix) > 0:
@@ -325,12 +509,18 @@ class LogisticRegression:
       else:
         persistWeightsAt = ''
       if learningInfo.optimizationAlgorithm == OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT:
-        self.MinimizeLossWithSGD(trainExamples, learningInfo, persistWeightsAt)
+        self.MinimizeLossWithSGD(trainExamples=trainExamples, devExamples=devExamples, 
+                                 learningInfo=learningInfo, persistWeightsAt=persistWeightsAt, verbose=verbose)
       elif learningInfo.optimizationAlgorithm == OptimizationAlgorithm.GRADIENT_DESCENT:
-        self.MinimizeLossWithGD(trainExamples, learningInfo, persistWeightsAt)
+        self.MinimizeLossWithGD(trainExamples=trainExamples, devExamples=devExamples, 
+                                learningInfo=learningInfo, persistWeightsAt=persistWeightsAt, verbose=verbose)
 
       # evaluate model on test set
-      (falsePositives, falseNegatives, truePositives, trueNegatives, prob1) = self.Evaluate(testExamples, classThreshold)
+      (falsePositives, falseNegatives, truePositives, trueNegatives, foldExampleProb1Pairs) = self.Evaluate(testExamples, classThreshold, verbose=verbose, trackFeatureImpact=trackFeatureImpact)
+
+      # update the exampleProbPairs
+      exampleProb1Pairs += foldExampleProb1Pairs
+
       # aggregate results
       totalFalsePositives += falsePositives
       totalFalseNegatives += falseNegatives
@@ -352,4 +542,4 @@ class LogisticRegression:
     else:
       f1 = 0
 
-    return (precision, recall, accuracy, f1)
+    return (precision, recall, accuracy, f1, exampleProb1Pairs)

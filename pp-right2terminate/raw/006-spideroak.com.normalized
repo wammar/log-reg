@@ -1,0 +1,81 @@
+from the treetops 
+the spideroak blog 
+spideroak privacy policy update 
+posted by ethan oberman at may 02 2012 2 26 am 
+at spideroak our user s privacy is valued above all else this is the reason behind our zero knowledge privacy standard and why we will continually put privacy first as we develop into the future with this in mind we would like to inform our users of an update to the spideroak privacy policy the changes can be summarized as follows 
+1 edits to the better business bureau contact information 
+2 include more firm and direct language around contacting a user should their information be requested by a third party 
+regarding the second point we have been working closely with the electronic frontier foundation eff over the last several years as we believe strongly in their mission to fight for the digital rights of all users during a recent conversation the eff suggested we remove all possible doubt around the area of disclosure in the event that we are contacted by a third party to access data stored on our servers to that end we have included the following paragraph under our the disclosure section 
+spideroak s policy is to notify a user of a request for their personal data stored on our servers prior to disclosure unless prohibited from doing so by statute or court order [e g u s c § 2705 b ] 
+to be clear it has been our policy to make contact with any user should we be approached by a third party for the purpose of accessing a particular user s data the addition of this paragraph more plainly states our stance so that there may be no confusion or room for interpretation i will add briefly that we have not yet been asked to relinquish end user data which we attribute directly to our zero knowledge privacy standard 
+please feel free to send additional thoughts or questions about this change and or any of our policies around protecting user privacy we will continue to work with the eff and others to ensure the rights of the user come first and foremost 
+a special thank you to the eff for continuing to help spread the word and draw that all important line 
+tags privacy policy 
+spideroak provides an easy secure and consolidated free online backup sync sharing access and storage solution for mac os x windows & linux 
+15 comments 
+a concerned user may 02 2012 7 48 am 
+first of all i would like to congrats you on the efforts and mission to ensure users privacy and data security 
+regarding the second part should you be required to give all information about a user can you elaborate on the data you keep which is not client side encrypted and thus available to demanding third party 
+jovan washington may 02 2012 10 56 am 
+hi concerned user 
+to be clear we have not nor will we ever give third parties access to your private data it undermines the very core of what spideroak believes in 
+to answer your question i will direct you to a blog post our cto alan wrote explaining what would be available from demanding third parties 
+https spideroak com blog 20091026143000 why and how spideroak architecture is different than other online storage services the surprising consequences on database design from our zero knowledge approach to privacy 
+ero spideroak may 02 2012 1 22 pm 
+to a concerned user thank you for your post as jovan mentions we cannot ever turn over any of the plaintext data you have uploaded into your spideroak account 
+as it relates more directly to your question we do have some plaintext information on who are users are information we collect at signup when they signed up for service and billing information if applicable on purpose we collect the least amount of data possible on our users just enough to create an account and use the service of course in a scenario where we were served with a proper and authoritative request we would by law be required to turn over this information as is mentioned in this update to our privacy policy 
+please do let me know if that answers your question and or you have any further thoughts moving forward and thank you again for your consideration and patronage 
+warrant may 02 2012 4 12 pm 
+have you considered implementing a warrant canary like rsync net as an additional measure 
+now a less concerned user may 02 2012 7 46 pm 
+thanks for clarifying that! i read both the linked blog post and the comment of ero which was very informative 
+one last thing i was wondering do you collect usage data ip addresses dates of access and etc 
+btw lately i find myself converting more and more dropbox users to your service highlighting their recent glitches 4 hours of no authentication latest vulnerability of iphone app with plain text authentication string 
+kudos for a great product 
+p s my questions might suggest i have something to hide but it is really just a curiosity of a fellow security privacy freak 
+now a less concerned user may 02 2012 7 47 pm 
++1 for a warrant canary as suggested above me 
+ero spideroak may 03 2012 2 45 am 
+to now a less concerned user we do retain log files for varying amounts of time as they do play a critical role in the debugging process that said we do not keep the log files for longer than seven days at which point they are destroyed and can never be made available to a third party 
+please let me know if that answers your question and don t hesitate to send further thoughts anytime 
+ero spideroak may 03 2012 2 51 am 
+to warrant thank you for your post to be honest we had not thought about implementing a warrant canary however after talking about it internally with our team we do feel it would be a good additional to our privacy and security focus we will work on making this part of our new website which is launching soon 
+someone may 03 2012 3 59 am 
+have thought about moving the company or at least the servers out of usa to a more privacy friendly nation 
+the company s base country server location and employee citizenship is my biggest problem with spideroak the second biggest problem is closed source client and server software 
+ero spideroak may 04 2012 1 22 am 
+to someone thank you for sending in your questions we have indeed thought about opening up data centers outside of the us including one in the eu most likely germany and another in asia we do not have a definitive date set for this but hopefully before the end of the 2012 
+regarding our code the backend technology we use is open sourced as part of our nimbus io product if you visit the project webpage https nimbus io you can access the code the frontend we have not yet open sources but it has been the topic of much discussion internally we will continue to think about what is best for our company in this regard but also continue to share code with the community when we can 
+now a less concerned user may 05 2012 2 45 pm 
+to ero spideroak 
+thanks for the prompt response this sounds reasonable to me log retaining and destroying 
+concerned user jun 27 2012 2 50 pm 
+don t open a data centre in the uk or register offices here the government here believes they have the right to have everyone s data and the courts honestly believe they rule the world and freedom of speech does not exist 
+eden caldas sep 12 2012 12 53 pm 
+client side encryption with closed source client is a no no 
+eden caldas sep 12 2012 12 53 pm 
+client side encryption with closed source client is a no no 
+upmtgmeg sep 26 2012 5 50 am 
+1 
+name 
+comment please use only text — comments will not display html or other markup 
+| 
+| 
+archives 
+authors 
+categories 
+tags 
+recent posts 
+now hiring > sales engineer! 
+spideroak speaks at cloudcon 
+[new video] you + your data 
+a note to our tech savvy forward thinking spideroak users yes we re talking to you! 
+spideroak university pop quiz answers #3 
+links 
+spideroak home 
+about us 
+contact spideroak 
+source code repository 
+json web api 
+
+

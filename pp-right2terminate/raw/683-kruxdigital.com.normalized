@@ -1,0 +1,88 @@
+krux 
+krux apps 
+about 
+contact 
+login 
+what we do 
+the big idea 
+who we are 
+broadcasts 
+krux & privacy 
+research download the 2012 cross industry study 
+400% increase observed more collection less control 
+home 
+krux pro 
+krux & privacy 
+krux & privacy 
+consumer choice 
+taking privacy and web data protection seriously 
+krux delivers technology to help website operators and users manage and protect consumer data our overarching goal is to make digital media less creepy and more productive for consumers publishers and advertisers that s why we take data privacy and data piracy very seriously 
+there are many practices on the web today that while not illegal are unethical and inappropriate two of the more egregious examples include the distribution of spyware or malware and the emerging practice of reaching into a user s browser during a website visit to read and record past web surfing habits serious questions can also be raised about the increasing number of third parties who are skimming or stealing audience data from a website through rogue cookie and pixel activities 
+we make publishers defined below and other website operators aware of uninvited unauthorized entities who are skimming data from their sites and we give them tools to mitigate and control such data flow within the technical limitations induced by existing internet protocols and standards 
+we use data collected via our technology to enhance our products improve the performance and security of our systems and our customer s systems and support our customers business needs within the bounds established by this privacy framework 
+krux is not in the business of setting industry standards but we do all that we can to advance industry dialogue and improve standards of practice to that end we will enable our clients to manage their data in a responsible way we will empower consumers to determine what data is collected and how it is used and we will expose inappropriate or unethical practices in data collection and ad targeting whenever we discover them through our technology we will expose bad actors and their actions educating the industry and consumers on the impact of any unethical inappropriate or illegal activities we discover 
+in all of our work we will seek to maintain alignment with standards established by groups such as the iab nai daa and opa and we are members in good standing of the iab and opa when we feel industry standards fall short we will take all reasonable steps to ensure that our customers and consumers receive greater protection above all our priorities are to advance the interests of publishers and consumers and to expose and correct bad data practices by doing so we will enable the industry to become a more responsible steward of audience data 
+how data is collected on the internet 
+cookies most websites use a small computer file known as a “cookie” to help provide many services and improve the user experience a cookie is a small unique randomly generated text file sent by a website s server to be stored on the user s web enabled device that is returned unchanged by the user s device to the server on subsequent interactions the cookie enables the website domain to associate data with that device and distinguish requests from different devices examples of the use of cookies would be to associate a set of website viewer preferences with a device or user without identifying the user such as a language preference or other user configurable options 
+should i disable or delete cookies 
+users have the ability to accept or decline cookies currently there are five ways to disable or delete the cookies stored by your internet browser each browser is different in its user interface so you may need to refer to your help or faq file to determine how to delete or disable cookies in your browser you may set the browser to i delete all cookies manually ii refuse all cookies for all website visits iii refuse all third party cookies all cookies from other than the website being visited iv use an “opt out” mechanism or v require your approval to accept cookies if you delete or refuse cookies you will find that many websites do not function as well as they did when using cookies for example websites where you have an account may not recognize your browser and it may take additional steps to login and reach the desired portion of the website if you require permission to accept cookies you may find the number of requests is so high as to make this impractical if you accept cookies you will be able to later delete the cookies please refer to information provided by your browser and follow the instructions regarding deleting cookies 
+current web browsers that conform with industry standards contain a mechanism known as a “do not track” “dnt” that allows a user to elect to opt out of the collection of certain browsing data by websites as a user you may elect to employ the dnt option if your browser supports it the krux platform recognizes these dnt signals from consumer browsers and ensures those users wishes are honored across all websites using our technology for data collection and targeting further krux offers a one click opt out solution for users who have not made a dnt election but who wish to opt out of any tracking and targeting via krux 
+about pixel tags pixel tags also known as beacons are small strings of html or javascript code that provide a method for delivering a graphic image on a web page or other document pixel tags allow the operator of the web page or other document or a third party who serves the pixel tag to set read and modify the krux digital targeting cookies pixel tags may also be used to obtain information about the computer being used to view that web page such as the ip address of the computer to which the pixel tag is sent the time it was sent the user s operating system and browser type and similar information no personally identifiable information is collected through the use of pixel tags 
+
+security 
+we take commercially reasonable efforts to maintain security protections in accordance with industry “best practices” to protect data we collect from loss alteration destruction misuse and unauthorized access or disclosure we maintain strict control and physical security of the facilities used to store data and only allow access to authorized personnel we restrict access to data to those employees contractors and agents that have a need to know the information in order to provide and support our services all krux employees are bound by confidentiality obligations and may be subject to disciplinary or legal action if they fail to meet these responsibilities 
+we process information in data centers located in the united states and the european union and to facilitate our operations we may transfer data between locations and across international boundaries you understand and agree to this transfer and our compliance with the laws of the country ies in which the data center s is are located 
+krux privacy policy 
+we do not use cookies on our own site for any other purpose than to enable consumers to opt in or out of our privacy framework and to collect krux session data defined below all krux cookies other than the krux opt out cookie expire automatically if inactive for six 6 months we will not and will not enable website owners or operators that use our technology “publishers” to use our technology to associate or link any personally identifiable information defined below “pii” to any cookies or non personally identifiable information “non pii” we will actively work to prevent our publishers from engaging in any activity that results in linking pii to non pii 
+when you visit the krux website the krux site you may be explicitly asked to provide some information about yourself in order for us to provide you services that you request “account data” this may include your name home or business address e mail address and or telephone number all of which is considered pii you can chose to provide this information to us by entering it into the krux site when requested we can only obtain this information from you if you choose to enter it into the krux site and we will only use it to communicate with you and provide you directly and through third parties the services you requested however if you do not provide such information we will be unable to provide some or all of the services you requested 
+when you navigate to the krux website we will also collect non pii related to your visit to the krux site “krux session data” when you navigate to a publisher website the “publisher site” the publisher may also collect and transfer to krux certain non pii related to your visit to their website “publisher session data” this may include information about how you came to the publisher site which search engine s and search terms you used to find the publisher site your experience on the publisher krux site and similar information additionally certain standard information that your browser sends to every website you visit such as your ip address browser type and language access times and referring web site addresses is collected by krux during visits to the krux site and by the publisher during visits to the publisher site 
+certain types of data associated with a specific individual such as social security numbers or other government issued identifiers financial account numbers precise information about an individual s past present or potential future health or medical conditions or treatments including genetic genomic and family medical history are highly sensitive “sensitive data” and krux does not collect use or store sensitive data 
+how we use non pii 
+krux uses the krux session data and the publisher session data to operate and enhance the krux site the publisher site in accordance with the publisher s request and to facilitate krux services we do not use any krux or publisher session data that is more than ninety 90 days old for user profiling or targeting non pii may be stored and processed in the u s or any other country where krux or its service providers or its or their affiliates conduct business 
+how we use pii 
+we aim to keep pii data off of our platform whenever possible if we are required to host pii data we will do so only at the specific request of the publishers or consumers from whom it originates and will protect that data in accordance with all applicable state and federal laws and this privacy policy if you terminate your account we will remove your pii from our systems within a reasonable time following such termination subject to our right to retain i copies of transactions between you and krux and related payment information and ii information relating to any dispute or potential fraud 
+krux does not share pii without the user s permission if we discover that a publisher is using or sharing pii without the user s permission or not complying with their privacy policy we will immediately alert the publisher if the publisher does not take aggressive feasible steps to remedy the infraction within 15 days we will terminate the publishers use of our services and sever our contractual relationship from time to time krux engages with partners to perform services on behalf of krux or other publishers who use our services for example we use third parties under contract with krux “contracted parties” to provide services such as credit card verification and processing fraud detection and prevention in all cases contracted partners are contractually required to maintain the confidentiality of pii and may not use it for purposes other than performing the specific services on krux s behalf other than such disclosure to contracted parties krux may also disclose pii is if such disclosure is required for krux to comply with valid and binding legal requirements to protect krux s rights or property or that of krux customers and or where needed to protect personal safety in the event we are required to disclose personal information in response to legal process or a government request we will notify you to the extent we are legally permitted to do so 
+in accordance with industry standards and the coppa regulations we do not knowingly collect administer or enable the commercial use of pii relating to children less than 13 years of age 
+krux will provide the ability for users to i obtain and correct or request destruction of any pii relating to them maintained by krux by sending an email to privacy@krux com or by contacting us at the address noted below ii control the delivery of promotional emails from krux iii opt out from receiving cookies other than an “opt out” cookie from the krux site and participating publisher sites through the krux “opt out mechanism” located here and displayed on our site and iv opt out of any behavioral targeting or tracking through the use of your browser s dnt feature 
+residents of the european union or switzerland 
+krux complies with the us eu safe harbor framework and us swiss safe harbor framework as set forth by the us department of commerce regarding the collection use and retention of personal information from european union member countries and switzerland krux has certified that it adheres to the safe harbor privacy principles of notice choice onward transfer security data integrity access and enforcement to learn more about the safe harbor program and to view our certification page please visit http www export gov safeharbor 
+in compliance with the us eu and us swiss safe harbor principles krux commits to resolve complaints about your privacy and our collection or use of your personal information european union or swiss citizens with inquiries or complaints regarding this privacy policy should first contact krux via email at privacy@kruxdigital com or postal mail at 181 south park #2 san francisco ca 94107 
+krux has further committed to refer unresolved privacy complaints under the us eu and us swiss safe harbor principles to an independent dispute resolution mechanism the bbb eu safe harbor operated by the council of better business bureaus if you do not receive timely acknowledgment of your complaint or if your complaint is not satisfactorily addressed by krux please visit the bbb eu safe harbor web site here for more information and to file a complaint 
+changes and questions 
+from time to time we may update this privacy policy to reflect changes in industry standards or evolving legal requirements when necessary and all changes will comply with regulatory legal and industry standards please review this privacy policy from time to time to remain informed regarding how krux is protecting your information 
+if you have any questions regarding this privacy policy or if you would like additional information please contact us at privacy@krux com or via mail to 181 south park #2 san francisco ca 94107 
+last updated march 16 2012 
+find us on facebook 
+follow us on twitter 
+@kruxdigital 
+drop us a line 
+javascript must be enabled to view this email address 
+give us a ring 
+ph 888 415 krux 5789 
+join 
+join our newsletter for the latest news and updates from krux 
+go 
+home 
+krux apps 
+about 
+login 
+contact 
+privacy policy 
+opt out 
+site map 
+© 2012 krux digital inc all rights reserved 
+site by blue coast web 
+which product would you like to log in to 
+or 
+× 
+need more information interested in a demo drop us a line and someone from team krux will follow up right away 
+company 
+website 
+first name 
+last name 
+email 
+phone 
+how can we help 
+other 
+
+
