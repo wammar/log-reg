@@ -18,13 +18,13 @@ from collections import defaultdict
 from boilerpipe.extract import Extractor
 
 # controls
-RUN_SUPERVISED = True
+RUN_SUPERVISED = False
 TUNE_HYPERPARAMS = False
-REGULARIZE_SUPERVISED = True
+REGULARIZE_SUPERVISED = False
 DEFAULT_REGULARIZATION_COEFFICIENT = 0.01
 DEFAULT_LEARNING_RATE = 0.01
 
-RUN_SELF_LEARNING = False
+RUN_SELF_LEARNING = True
 REGULARIZE_UNSUPERVISED = True
 SELF_LEARNING_ZERO_THRESHOLD = 0.01
 SELF_LEARNING_ONE_THRESHOLD = 0.8
@@ -172,7 +172,7 @@ def SelfLearn(logReg, seedExamples, unlabeledExamples, testExample, learningInfo
   labeledExamples.extend(selfLearntExamples)
 
 #  print '# total training examples = {0}'.format(len(labeledExamples))
-  logReg.MinimizeLoss(labeledExamples, devExamples=[], persistWeightsAt=learningInfo.persistWeightsAtPrefix, learningInfo=learningInfo, verbose = VERBOSE)
+  logReg.MinimizeLoss(labeledExamples, devExamples=[], persistWeightsAt=learningInfo.persistWeightsAtPrefix, learningInfo=learningInfo, verbose = VERBOSE, resetWeights = False)
 
   prob1 = logReg.ComputeProb1(testExample)
   print '****************************'
@@ -344,11 +344,11 @@ else:
   learningInfo.regularizer = Regularizer.NONE
 
 if RUN_SELF_LEARNING:
-  # now train one good system to generate labels for unlabeled documents
-  logReg.MinimizeLoss(
-    trainExamples = labeledExamples,
-    learningInfo = learningInfo,
-    verbose = VERBOSE)
+#  # now train one good system to generate labels for unlabeled documents
+#  logReg.MinimizeLoss(
+#    trainExamples = labeledExamples,
+#    learningInfo = learningInfo,
+#    verbose = VERBOSE)
 
   # for each unlabeled example in raw/docId-randomLabel, write a line in features/randomLabeled.txt.
   unlabeledFeaturesFilename = '{0}.unlabeled'.format(outputPrefix)

@@ -262,10 +262,7 @@ class LogisticRegression:
           l2RegularizationUpdateTerm = learningInfo.regularizationCoefficient / len(trainExamples) * self.weights[featureId]
 
           # the actual weight update happens here
-          multiplier = 1.0
-          if example.label == 1:
-            multiplier = 5.0
-          self.weights[featureId] -= multiplier * learningInfo.learningRate * ( example.featuresDict[featureId] * (prob1 - example.label) + l2RegularizationUpdateTerm )
+          self.weights[featureId] -= learningInfo.learningRate * ( example.featuresDict[featureId] * (prob1 - example.label) + l2RegularizationUpdateTerm )
 
         # end of features
 
