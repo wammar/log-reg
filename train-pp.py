@@ -44,11 +44,16 @@ STOCHASTIC = True
 argParser = argparse.ArgumentParser()
 argParser.add_argument("-raw", type=str, help="raw files directory")
 argParser.add_argument("-out", type=str, help="output prefix")
-argParser.add_argument("-folds", type=int, help="number of folds to use for training")
+argParser.add_argument("-folds", type=int, default=0, help="number of folds to use for training")
 args = argParser.parse_args()
 rawDir = args.raw
 outputPrefix = args.out
 FOLDS = args.folds
+
+if FOLDS == 0:
+  f = open(rawDir + '/docId-label.txt')
+  FOLDS = len(list(f))
+  f.close()
 
 #####################
 # Utility Functions #
