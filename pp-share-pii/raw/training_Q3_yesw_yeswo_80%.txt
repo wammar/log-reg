@@ -1,0 +1,4 @@
+117-forbes.com.normalized	0
+180-meetup.com.normalized	0
+172-ign.com.normalized	1
+043-imgur.com.normalized	1

@@ -1,0 +1,10 @@
+117-forbes.com.normalized	0
+180-meetup.com.normalized	1
+088-bbc.co.uk.normalized	0
+123-photobucket.com.normalized	0
+172-ign.com.normalized	1
+011-twitter.com.normalized	0
+032-foxnews.com.normalized	1
+003-yahoo.com.normalized	0
+043-imgur.com.normalized	1
+014-pinterest.com.normalized	1

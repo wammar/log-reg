@@ -1,0 +1,13 @@
+147-goodreads.com.normalized	0
+136-macys.com.normalized	0
+113-monster.com.normalized	0
+112-constantcontact.com.normalized	0
+157-disney.go.com.normalized	0
+148-backpage.com.normalized	0
+117-forbes.com.normalized	1
+167-nydailynews.com.normalized	0
+092-bleacherreport.com.normalized	0
+123-photobucket.com.normalized	0
+175-livingsocial.com.normalized	0
+040-wellsfargo.com.normalized	0
+056-pandora.com.normalized	0

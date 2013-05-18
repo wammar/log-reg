@@ -14,17 +14,18 @@ import HTMLParser
 import xml.dom.minidom
 import socket
 import operator
+import argparse
 from collections import defaultdict
 from boilerpipe.extract import Extractor
 
 # controls
-RUN_SUPERVISED = False
+RUN_SUPERVISED = True
 TUNE_HYPERPARAMS = False
-REGULARIZE_SUPERVISED = False
+REGULARIZE_SUPERVISED = True
 DEFAULT_REGULARIZATION_COEFFICIENT = 0.01
 DEFAULT_LEARNING_RATE = 0.01
 
-RUN_SELF_LEARNING = True
+RUN_SELF_LEARNING = False
 REGULARIZE_UNSUPERVISED = True
 SELF_LEARNING_ZERO_THRESHOLD = 0.01
 SELF_LEARNING_ONE_THRESHOLD = 0.8
@@ -36,14 +37,18 @@ USE_TRIGRAM_COUNTS = True
 USE_UNIGRAM_PRESENCE = False
 USE_BIGRAM_PRESENCE = False
 USE_TRIGRAM_PRESENCE = False
+
 STOCHASTIC = True
-FOLDS = 21
 
 # parse command line arguments
-pythonScript = sys.argv[0]
-assert(pythonScript[-3:]=='.py')
-rawDir = sys.argv[1]
-outputPrefix = sys.argv[2]
+argParser = argparse.ArgumentParser()
+argParser.add_argument("-raw", type=str, help="raw files directory")
+argParser.add_argument("-out", type=str, help="output prefix")
+argParser.add_argument("-folds", type=int, help="number of folds to use for training")
+args = argParser.parse_args()
+rawDir = args.raw
+outputPrefix = args.out
+FOLDS = args.folds
 
 #####################
 # Utility Functions #
@@ -308,8 +313,13 @@ if RUN_SUPERVISED:
 #    featureImpactPairs.append((k, v))
   sortedFeatureImpactPairs = sorted(logReg.featureImpacts.iteritems(), key=operator.itemgetter(1))
   featureImpactFile = open('{0}-impact'.format(outputPrefix), 'w')
+  featureImpactFile.write('id\tavgWeight\timpact\t0-freq\t1-freq\n')
   for pair in sortedFeatureImpactPairs:
-    featureImpactFile.write('{0}\t{1}\n'.format(pair[0], pair[1]))
+    totalWeight = 0
+    for weight in logReg.featureWeights[pair[0]]:
+      totalWeight += weight
+    avgWeight = totalWeight / len(logReg.featureWeights[pair[0]])
+    featureImpactFile.write('{0}\t{1:.2f}\t{2:.2f}\t{3:.2f}\t{4:.2f}\n'.format(pair[0].replace('|', ' ').replace('F1', '').replace('F2', '').replace('F3', ''), avgWeight, pair[1], logReg.featureFreqInClass0[pair[0]]/12.0, logReg.featureFreqInClass1[pair[0]]/7.0))
   featureImpactFile.close()
 
   print '\nleave one out results:\n'

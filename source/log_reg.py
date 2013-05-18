@@ -85,7 +85,6 @@ class LogisticRegression:
   # resets all feature weights to zeros
   def InitFeatureWeights(self):
     self.weights = defaultdict(float)
-    self.featureImpacts = defaultdict(float)
 
   def ReadExamples(self, labelFeaturesFilename):
     # read the examples in labelFeaturesFilename in a list 
@@ -118,6 +117,12 @@ class LogisticRegression:
 
   def __init__(self):
 
+    # initialize statistics
+    self.featureImpacts = defaultdict(float)
+    self.featureFreqInClass0 = defaultdict(float)
+    self.featureFreqInClass1 = defaultdict(float)
+    self.featureWeights = defaultdict(list)
+
     # feature weights
     self.InitFeatureWeights()
 
@@ -136,7 +141,12 @@ class LogisticRegression:
       if math.isnan(temp):
         continue
       if trackFeatureImpact:
-        self.featureImpacts[featureId] += math.fabs(temp)
+        self.featureWeights[featureId].append(self.weights[featureId])
+        self.featureImpacts[featureId] += temp
+        if unlabeledExample.label == 0:
+          self.featureFreqInClass0[featureId] += 1
+        else:
+          self.featureFreqInClass1[featureId] += 1
       exponent -= temp
       # TODO:  better handling of this error
       if math.isnan(exponent):
